@@ -49,4 +49,4 @@ The frontend of the Bank transaction has been successfully deployed on GitHub Pa
 # Bank transaction - Frontend
 
 # Conclusion
-This frontend documentation provides a comprehensive overview of the user interface components, layouts, functionalities, and interactions of the Payroll System frontend. It serves as a guide for developers, designers, and stakeholders involved in the frontend development process.
+This frontend documentation provides a comprehensive overview of the user interface components, layouts, functionalities, and interactions of the Bank transaction frontend. It serves as a guide for developers, designers, and stakeholders involved in the frontend development process.
