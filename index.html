@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        h2 {
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 96%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bank Login</h2>
+        <form id="loginForm" action="#" onsubmit="return redirectToRole()">
+           <label for="role" style="font-weight: bold; font-size: 16px; display: block; margin-bottom: 5px;">Select your role:</label>
+            <select id="role" name="role" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 3px; background-color: #fff;">
+                <option value="manager" style="font-size: 14px;">Manager</option>
+                <option value="customer" style="font-size: 14px;">Customer</option>
+            </select>
+            <input type="text" id="username" name="username" placeholder="Username">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <input type="button" onclick="validateLogin()" value="Login">
+        </form>
+    </div>
+
+<script>
+    function validateLogin() {
+        var role = document.getElementById("role").value;
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (role === "manager" && username === "vijay" && password === "123456") {
+            window.location.href = "managerdashboard.html"; // Redirect to manager dashboard
+        } else if (role === "customer" && username === "12" && password === "123456") {
+            window.location.href = "customerdashboard.html"; // Redirect to customer dashboard
+        } else {
+            alert("Invalid username or password. Please try again.");
+        }
+    }
+</script>
+</body>
+</html>

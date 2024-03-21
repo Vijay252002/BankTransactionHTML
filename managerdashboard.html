@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manager Dashboard</title>
+<style>
+background-color: #f2f2f2;
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+box-shadow: 10px 10px grey;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Sample data styles */
+.sample-data {
+  color: #666;
+}
+
+
+
+/* General styles */
+.container {
+  width: 700px;
+  margin-left:400px;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+background-color:rgba(255, 211, 71, 0.2);
+box-shadow:0 0 10px;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #555;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Dashboard styles */
+.dashboard {
+  text-align: center;
+}
+
+/* Bank name */
+.bank-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Manager and bank location */
+.manager-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.manager-name,
+.bank-location {
+  font-size: 18px;
+  padding-left:10px;
+  padding-right:12px;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  color: white;
+  overflow: hidden;
+}
+
+/* Navbar container */
+.navbar-container {
+  display: flex;
+   height:40px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar links */
+.navbar-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+li {
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+}
+.navbar-links li {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* On mouse-over */
+.navbar-links li a:hover {
+  background-color: #550;
+}
+.navbar-links li:hover {
+  background-color: #550;
+}
+
+
+/* Logout button */
+.logout-button {
+  background-color: #cc0000;
+}
+
+/* Button hover */
+.logout-button:hover {
+  background-color: #ff0000;
+}
+
+#addcustomer{
+  display:none;
+  position:absolute;
+  
+}
+#updatecustomer,#removecustomer,#alertcustomer,#statementcustomer,#logincustomer,#listcustomer{
+  display:none;
+  position:absolute;
+
+}
+</style>
+</head>
+<body  style="background-color:rgb(240, 240, 240)">
+
+<div class="dashboard">
+  <div class="bank-name"><h2>HDFC MANAGER</div>
+<hr>
+  <div class="manager-info">
+    <span class="manager-name">Ram Kishore</span>
+    <span class="bank-location">PO BOX 111<br>Johannesburg<br>2000</span>
+  </div>
+</div>
+
+<div class="navbar">
+  <div class="navbar-container">
+    <ul class="navbar-links">
+      <li onclick = functionOne()>Add Customer</li>
+      <li onclick = functionTwo()>update Customer</li>
+      <li onclick = functionThree()>Delete Customer</li>
+      <li onclick = functionFour()>List of Customer</li>
+      <li onclick = functionFive()>Send Alert Mail</li>
+      <li onclick = functionSix()>Statement Generation</li>
+      <li onclick = functionSeven()>Last Login Details</li>
+     <li id="logoutButton" class="logout-button">Logout</li>
+
+
+    </ul>
+  </div>
+</div>
+
+<div class="container" id="addcustomer">
+  <h2>Add Customer</h2>
+  <form action="#" method="post">
+    <div class="form-group">
+      <label for="firstname">First Name:</label>
+      <input type="text" id="firstname" name="firstname" required>
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last Name:</label>
+      <input type="text" id="lastname" name="lastname" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" name="mobile" required>
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <label for="male"><input type="radio" id="male" name="gender" value="male" required> Male</label>
+        <label for="female"><input type="radio" id="female" name="gender" value="female"> Female</label>
+    </div>
+    <div class="form-group">
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+    </div>
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="pan">PAN Number:</label>
+      <input type="text" id="pan" name="pan" required>
+    </div>
+    <div class="form-group">
+      <label for="balance">Initial Balance:</label>
+      <input type="text" id="balance" name="balance" required>
+    </div>
+    <div class="form-group">
+      <label for="account-type">Account Type:</label>
+      <select id="account-type" name="account-type" required>
+        <option value="savings">Savings</option>
+        <option value="current">Current</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="branch-id">Branch ID:</label>
+      <input type="text" id="branch-id" name="branch-id" required>
+    </div>
+    <div class="form-group">
+      <label for="aadhar">Aadhar Card:</label>
+      <input type="text" id="aadhar" name="aadhar" required>
+    </div>
+    <div class="form-group">
+      <label for="credit-card">Credit Card:</label>
+      <input type="text" id="credit-card" name="credit-card" required>
+    </div>
+<div class="form-group">
+      <label for="debits-card">Debit Card:</label>
+      <input type="text" id="debit-card" name="debit-card" required>
+    </div>
+    <input type="submit" onclick="" value="Submit">
+  </form>
+</div>
+
+<div class="container" id="updatecustomer">
+  <h2>Update Customer Details</h2>
+  <form action="#" method="post">
+    <div class="form-group">
+      <label for="account-no">Account Number:</label>
+      <input type="text" id="account-no" name="account-no" required>
+    </div>
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+    </div>
+    <div class="form-group">
+      <label for="mobile">Mobile Number:</label>
+      <input type="tel" id="mobile" name="mobile" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email ID:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="aadhar">Aadhar Number:</label>
+      <input type="text" id="aadhar" name="aadhar" required>
+    </div>
+    <div class="form-group">
+      <label for="credit-card">Credit Card:</label>
+      <input type="text" id="credit-card" name="credit-card" required>
+    </div>
+    <div class="form-group">
+      <label for="debit-card">Debit Card:</label>
+      <input type="text" id="debit-card" name="debit-card" required>
+    </div>
+    <input type="submit" value="Update">
+  </form>
+</div>
+
+<div class="container" id="removecustomer">
+  <h2>Remove Customer Details</h2>
+  <form action="#" method="post">
+    <div class="form-group">
+      <label for="account-no">Account Number:</label>
+      <input type="text" id="account-no" name="account-no" required>
+    </div>
+ <input type="submit" value="Delete">
+  </form>
+</div>
+
+<div class="container" id="alertcustomer">
+  <h2>Send alert mail for customers how are not linked Aadhar number</h2>
+  <form action="#" method="post">
+ <input type="submit" value="Send mail">
+  </form>
+</div>
+
+<div class="container" id="statementcustomer">
+  <h2>Statement generation</h2>
+  <form action="#" method="post">
+<div class="form-group">
+      <label for="account-no">Account Number:</label>
+      <input type="text" id="account-no" name="account-no" required>
+    </div>
+ <input type="submit" value="Generate statemenet">
+  </form>
+</div>
+
+<div class="container" id="logincustomer">
+  <h2>Login Records</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Account Number</th>
+        <th>Login Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>123456789</td>
+        <td>2024-03-18 10:00:00</td>
+      </tr>
+      <tr>
+        <td>987654321</td>
+        <td>2024-03-18 12:30:00</td>
+      </tr>
+      <tr>
+        <td>567891234</td>
+        <td>2024-03-18 15:45:00</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container" id="listcustomer">
+  <h2>Customer Details</h2>
+  <!-- Form for start date and end date -->
+  <form id="dateForm">
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate" required>
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="endDate" required>
+<br>
+<br>
+    <input type="submit" value="List customer">
+<br>
+
+  </form>
+  <br>
+  <!-- Table for displaying customer details -->
+  <table id="customerTable" style="display: none;">
+    <thead>
+      <tr>
+        <th>Account Id</th>
+        <th>Balance</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Mobile Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Customer details will be populated here dynamically -->
+    </tbody>
+  </table>
+</div>
+
+
+<script> 
+  const functionOne = () => {
+document.getElementById("addcustomer").style.display = 'block';
+document.getElementById("updatecustomer").style.display = 'none';
+document.getElementById("removecustomer").style.display = 'none';
+document.getElementById("alertcustomer").style.display= 'none';
+document.getElementById("listcustomer").style.display='none';
+document.getElementById("logincustomer").style.display='none';
+document.getElementById("statementcustomer").style.display='none';
+}
+  const functionTwo = () => {
+document.getElementById("updatecustomer").style.display = 'block';
+document.getElementById("addcustomer").style.display = 'none';
+document.getElementById("removecustomer").style.display = 'none';
+document.getElementById("alertcustomer").style.display= 'none';
+document.getElementById("statementcustomer").style.display='none';
+document.getElementById("logincustomer").style.display='none';
+document.getElementById("listcustomer").style.display='none';
+}
+const functionThree = () =>{
+document.getElementById("updatecustomer").style.display = 'none';
+document.getElementById("addcustomer").style.display = 'none';
+document.getElementById("removecustomer").style.display = 'block';
+document.getElementById("alertcustomer").style.display= 'none';
+document.getElementById("statementcustomer").style.display='none';
+document.getElementById("logincustomer").style.display='none';
+document.getElementById("listcustomer").style.display='none';
+}
+document.getElementById("logoutButton").addEventListener("click", function() {
+    functionout("loginpage.html");
+});
+
+function functionout(url) {
+    window.location.href = url;
+}
+
+const functionFour = () =>{
+document.getElementById("updatecustomer").style.display = 'none';
+document.getElementById("addcustomer").style.display = 'none';
+document.getElementById("removecustomer").style.display = 'none';
+document.getElementById("alertcustomer").style.display= 'none';
+document.getElementById("statementcustomer").style.display='none';
+document.getElementById("logincustomer").style.display='none';
+document.getElementById("listcustomer").style.display='block';
+
+document.getElementById("dateForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent form submission
+  
+  // Get start date and end date values
+  var startDate = document.getElementById("startDate").value;
+  var endDate = document.getElementById("endDate").value;
+  
+  
+  var customerDetails = [
+    { accountId: "123456789", balance: "$1000", email: "example1@example.com", name: "John Doe", mobileNumber: "123-456-7890" },
+    { accountId: "987654321", balance: "$1500", email: "example2@example.com", name: "Jane Doe", mobileNumber: "987-654-3210" },
+    // Add more customer details as needed
+  ];
+  
+  // Clear previous table data
+  var tableBody = document.querySelector("#customerTable tbody");
+  tableBody.innerHTML = "";
+  
+  // Populate table with customer details within the specified date range
+  customerDetails.forEach(function(customer) {
+    // Sample condition to filter by date range (replace with actual logic)
+    // Here, we are assuming all customer records are considered within the date range
+    var row = "<tr>" +
+              "<td>" + customer.accountId + "</td>" +
+              "<td>" + customer.balance + "</td>" +
+              "<td>" + customer.email + "</td>" +
+              "<td>" + customer.name + "</td>" +
+              "<td>" + customer.mobileNumber + "</td>" +
+              "</tr>";
+    tableBody.innerHTML += row;
+  });
+  
+  // Show the table
+  document.getElementById("customerTable").style.display = "table";
+
+});
+
+}
+
+
+const functionFive = () =>{
+document.getElementById("updatecustomer").style.display = 'none';
+document.getElementById("addcustomer").style.display = 'none';
+document.getElementById("removecustomer").style.display = 'none';
+document.getElementById("alertcustomer").style.display= 'block';
+document.getElementById("statementcustomer").style.display='none';
+document.getElementById("logincustomer").style.display='none';
+document.getElementById("listcustomer").style.display='none';
+}
+const functionSix = () =>{
+document.getElementById("updatecustomer").style.display = 'none';
+document.getElementById("addcustomer").style.display = 'none';
+document.getElementById("removecustomer").style.display = 'none';
+document.getElementById("alertcustomer").style.display= 'none';
+document.getElementById("statementcustomer").style.display='block';
+document.getElementById("logincustomer").style.display='none';
+document.getElementById("listcustomer").style.display='none';
+}
+const functionSeven = () =>{
+document.getElementById("updatecustomer").style.display = 'none';
+document.getElementById("addcustomer").style.display = 'none';
+document.getElementById("removecustomer").style.display = 'none';
+document.getElementById("alertcustomer").style.display= 'none';
+document.getElementById("statementcustomer").style.display='none';
+document.getElementById("logincustomer").style.display='block';
+document.getElementById("listcustomer").style.display='none';
+
+
+
+
+}
+
+
+
+</script>
+</body>
+</html>
