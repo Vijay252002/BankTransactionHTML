@@ -8,13 +8,9 @@ The frontend of the Bank Transaction is built using modern web technologies, inc
 - HTML5
 - CSS3
 - JavaScript
-## Folder Structure
-The frontend project follows a structured organization, with the following directories:
 
 ## User Interface Components
 The Bank Transaction frontend includes various UI components such as forms, tables, buttons, and navigation bars. These components are designed to provide a user-friendly experience and efficient navigation through the system.
-
-
 
 ## Login page manager
 ![login](login.png)
@@ -46,7 +42,8 @@ The frontend is styled using CSS3, with a focus on clean and modern design princ
 # Deployment and Hosting
 The frontend of the Bank transaction has been successfully deployed on GitHub Pages. You can access the deployed project using the following link:https://vijay252002.github.io/BankTransactionHTML/
 
-# Bank transaction - Frontend
+# Bank transaction - BackEnd
+
 
 # Conclusion
 This frontend documentation provides a comprehensive overview of the user interface components, layouts, functionalities, and interactions of the Bank transaction frontend. It serves as a guide for developers, designers, and stakeholders involved in the frontend development process.
