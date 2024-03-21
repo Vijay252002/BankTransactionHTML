@@ -32,7 +32,7 @@ The Bank Transaction frontend includes various UI components such as forms, tabl
 The frontend is styled using CSS3, with a focus on clean and modern design principles. A consistent color scheme, typography, and visual elements create a cohesive and visually appealing UI.
 
 # Deployment and Hosting
-The frontend of the Bank transaction has been successfully deployed on GitHub Pages. You can access the deployed project using the following link:
+The frontend of the Bank transaction has been successfully deployed on GitHub Pages. You can access the deployed project using the following link:https://vijay252002.github.io/BankTransactionHTML/
 
 # Bank transaction - Frontend
 
