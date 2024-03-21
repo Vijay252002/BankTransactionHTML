@@ -20,12 +20,24 @@ The Bank Transaction frontend includes various UI components such as forms, tabl
 ![login](login.png)
 ## Manager Dashboard
 ![dashboard](dashboard.png)
+- Add customer
+- Update customer
+- Remove Customer
+- List customer
+- Alert mail
+- Statement generation
 # List customer
 ![list](list.png)
 ## Login customer
 ![customer](customer.png)
 ## customer Dashboard
 ![balance](balance.png)
+- Check Balance
+- Add nominee
+- Update nominee
+- Remove nominee
+- Deposit amount
+- Withdrawal amount
 # Check remove nominee
 ![remove](remove.png)
 # Styling and Theming
